@@ -50,7 +50,7 @@ domy = DomContainer([
     Dom("Ul. Wąska 8", 4, 110, "brązowy"),
     Dom("Ul. Parkowa 12", 5, 150, "czerwony"),
     Dom("Ul. Słoneczna 1", 4, 125, "biały"),
-     Dom("Ul. Kwiatowa 10", 4, 120, "biały"),
+    Dom("Ul. Kwiatowa 10", 4, 120, "biały"),
     Dom("Ul. Ogrodowa 5", 3, 85, "szary"),
     Dom("Ul. Zielona 3", 5, 140, "żółty"),
     Dom("Ul. Lipowa 7", 2, 60, "niebieski"),
@@ -62,7 +62,38 @@ domy = DomContainer([
     Dom("Ul. Zaciszna 6", 3, 100, "szary")
 ]).getListToDisplay()
 
-
+psy = DogContainer([
+    Dog("Burek", "Owczarek Niemiecki", 3, "czarny"),
+    Dog("Reksio", "Labrador", 5, "złoty"),
+    Dog("Azor", "Buldog", 2, "biały"),
+    Dog("Tobi", "Pudel", 4, "brązowy"),
+    Dog("Maks", "Beagle", 3, "biało-brązowy"),
+    Dog("Nero", "Rottweiler", 6, "czarny"),
+    Dog("Bono", "Border Collie", 7, "czarno-biały"),
+    Dog("Lucky", "Golden Retriever", 5, "złoty"),
+    Dog("Diesel", "Pitbull", 4, "szary"),
+    Dog("Zygi", "Dachshund", 2, "rudy"),
+    Dog("Kora", "Shih Tzu", 1, "biały"),
+    Dog("Nina", "Chihuahua", 3, "czarny"),
+    Dog("Gaja", "Siberian Husky", 5, "szary"),
+    Dog("Rocky", "Doberman", 6, "czarny"),
+    Dog("Luna", "Akita Inu", 3, "biało-czarny"),
+    Dog("Roxy", "Yorkshire Terrier", 4, "złoty"),
+    Dog("Spike", "Mastiff", 5, "brązowy"),
+    Dog("Mila", "Maltańczyk", 1, "biały"),
+    Dog("Leo", "Samoyed", 4, "biały"),
+    Dog("Dino", "Chow Chow", 2, "rudy"),
+    Dog("Bella", "Cocker Spaniel", 3, "brązowy"),
+    Dog("Max", "Dalmatyńczyk", 6, "biało-czarny"),
+    Dog("Czaki", "Cane Corso", 5, "czarny"),
+    Dog("Fibi", "Jack Russell Terrier", 2, "biało-brązowy"),
+    Dog("Loki", "Shiba Inu", 4, "rudy"),
+    Dog("Aron", "Hound", 5, "czarno-brązowy"),
+    Dog("Lara", "Whippet", 2, "szary"),
+    Dog("Maja", "Papillon", 3, "biało-czarny"),
+    Dog("Miki", "Pomeranian", 1, "rudy"),
+    Dog("Kika", "Basset Hound", 6, "brązowo-biały"),
+]).getListToDisplay()
 class CustomLayoutApp(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -95,11 +126,11 @@ class CustomLayoutApp(tk.Tk):
 
         # Przygotowanie różnych zestawów danych do wyświetlenia
         data1 = domy
-        data2 = [["ID", "Name", "Age", "Location"], ["30", "Anna", "22", "Warszawa"], ["40", "Tomasz", "28"]]
-        data3 = [["ID", "Name", "Age"], ["50", "Monika", "35"], ["60", "Paweł", "19"]]
+        data2 = auta
+        data3 = psy
 
         # Dodanie trzech przycisków, każdy z innym zestawem danych
-        buttons_data = [("Data 1", data1), ("Data 2", data2), ("Data 3", data3)]
+        buttons_data = [("Domy", data1), ("Auta", data2), ("Psy", data3)]
         for i, (text, data) in enumerate(buttons_data):
             button = tk.Button(self.top_frame, text=text, command=lambda d=data: self.display_table(d))
             button.grid(row=0, column=i, padx=5, pady=10)
